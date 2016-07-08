@@ -14,7 +14,7 @@ public class HelloServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         PrintWriter out = response.getWriter();
-        String title = "Using " + request.getMethod() + " method to read from form data";
+        String title = "Using " + request.getMethod() + " method to read form data";
         String docType = "<!doctype html public \"-//w3c//dtd html 4.0 transitional//en\">\n";
         out.println(docType +
                 "<html>\n" +
