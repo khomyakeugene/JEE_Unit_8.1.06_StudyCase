@@ -1,4 +1,3 @@
-<%@ page import="java.util.Enumeration" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
@@ -12,16 +11,12 @@
         <th>Header Name</th>
         <th>Header Value</th>
     </tr>
-    <%
-        Enumeration<String> headerNames = request.getHeaderNames();
-        while (headerNames.hasMoreElements()) {
-            String headerName = headerNames.nextElement();
-            String headerValue = request.getHeader(headerName); %>
-    <tr>
-        <td><% out.print(headerName); %></td>
-        <td><% out.print(headerValue); %></td>
-    </tr>
-    <%}%>
+    <c:forEach items="${param.keySet()}" var="headerName">
+        <tr>
+            <td><c:out value="${headerName}"/></td>
+            <td><c:out value="${param.get(headerName)}"/></td>
+        </tr>
+    </c:forEach>
 </table>
 </body>
 </html>
