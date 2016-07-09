@@ -22,11 +22,12 @@
         Enumeration<String> headerNames = request.getHeaderNames();
         while (headerNames.hasMoreElements()) {
             String headerName = headerNames.nextElement();
-            String headerValue = request.getHeader(headerName);
-            out.print("<tr><td>" + headerName + "</td>\n");
-            out.print("<td>" + headerValue + "<td></tr>\n");
-        }
-    %>
+            String headerValue = request.getHeader(headerName); %>
+    <tr>
+        <td><% out.print(headerName); %></td>
+        <td><% out.print(headerValue); %></td>
+    </tr>
+    <%}%>
 </table>
 </body>
 </html>
