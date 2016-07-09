@@ -11,10 +11,10 @@
         <th>Header Name</th>
         <th>Header Value</th>
     </tr>
-    <c:forEach items="${param.keySet()}" var="headerName">
+    <c:forEach items="${header.keySet()}" var="headerName">
         <tr>
             <td><c:out value="${headerName}"/></td>
-            <td><c:out value="${param.get(headerName)}"/></td>
+            <td><c:out value="${header.get(headerName)}"/></td>
         </tr>
     </c:forEach>
 </table>
