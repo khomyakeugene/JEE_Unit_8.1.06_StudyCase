@@ -8,7 +8,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>HTTP Header Requset Example</title>
+    <title>HTTP Header Request Example</title>
 </head>
 <body>
 <h2>HTTP Header Requset Example</h2>
