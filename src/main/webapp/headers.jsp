@@ -1,3 +1,4 @@
+<%@ page import="java.util.Enumeration" %>
 <%--
   Created by IntelliJ IDEA.
   User: Yevhen
@@ -17,6 +18,15 @@
         <th>Header Name</th>
         <th>Header Value</th>
     </tr>
+    <%
+        Enumeration<String> headerNames = request.getHeaderNames();
+        while (headerNames.hasMoreElements()) {
+            String headerName = headerNames.nextElement();
+            String headerValue = request.getHeader(headerName);
+            out.print("<tr><td>" + headerName + "</td>\n");
+            out.print("<td>" + headerValue + "<td></tr>\n");
+        }
+    %>
 </table>
 </body>
 </html>
