@@ -11,8 +11,7 @@ import java.io.PrintWriter;
  * Created by Yevhen on 08.07.2016.
  */
 public class HelloServlet extends HttpServlet {
-    @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    private void getResponse(HttpServletRequest request, HttpServletResponse response) throws IOException {
         PrintWriter out = response.getWriter();
         String title = "Using " + request.getMethod() + " method to read form data";
         String docType = "<!doctype html public \"-//w3c//dtd html 4.0 transitional//en\">\n";
@@ -26,5 +25,16 @@ public class HelloServlet extends HttpServlet {
                 "    <li><b>Last Name</b>: " + request.getParameter("last_name") + "\n" +
                 "</u1>\n" +
                 "</body></html>");
+    }
+
+    @Override
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        getResponse(request, response);
+    }
+
+
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        getResponse(request, response);
     }
 }
