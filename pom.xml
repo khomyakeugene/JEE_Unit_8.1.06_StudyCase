@@ -33,7 +33,6 @@
                 <configuration>
                     <webXml>src/main/resources/WEB-INF/web.xml</webXml>
                     <warName>goit</warName>
-                    <webResources>src/main/webapp/*</webResources>
                 </configuration>
             </plugin>
 
